@@ -167,7 +167,7 @@
   revision = "13ba4ddd0caa9c28ca7b7bffe1dfa9ed8d5ef207"
 
 [[projects]]
-  digest = "1:c78edab144d03422b52cd34d5fa4ffc9a59fef90b3afdcf2efc4dd333479f243"
+  digest = "1:37048376ddde4c31cb7be8bdb3f171a049a82dda181290a223942e11c701a5bf"
   name = "github.com/prometheus/procfs"
   packages = [
     ".",

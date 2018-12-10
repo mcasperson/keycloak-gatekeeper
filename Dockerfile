@@ -8,7 +8,7 @@ LABEL Name=keycloak-gatekeeper \
 RUN apk add --no-cache ca-certificates
 
 ADD templates/ /opt/templates
-ADD bin/keycloak-gatekeeper /opt/keycloak-gatekeeper
+ADD keycloak-gatekeeper /opt/keycloak-gatekeeper
 
 WORKDIR "/opt"
 

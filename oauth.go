@@ -19,14 +19,13 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"github.com/coreos/go-oidc/jose"
+	"github.com/coreos/go-oidc/oauth2"
+	"github.com/coreos/go-oidc/oidc"
 	"io/ioutil"
 	"net/http"
 	"strings"
 	"time"
-
-	"github.com/coreos/go-oidc/jose"
-	"github.com/coreos/go-oidc/oauth2"
-	"github.com/coreos/go-oidc/oidc"
 )
 
 // getOAuthClient returns a oauth2 client from the openid client
@@ -36,7 +35,7 @@ func (r *oauthProxy) getOAuthClient(redirectionURL string) (*oauth2.Client, erro
 			ID:     r.config.ClientID,
 			Secret: r.config.ClientSecret,
 		},
-		AuthMethod:  oauth2.AuthMethodClientSecretBasic,
+		AuthMethod:  oauth2.AuthMethodClientSecretPost,
 		AuthURL:     r.idp.AuthEndpoint.String(),
 		RedirectURL: redirectionURL,
 		Scope:       append(r.config.Scopes, oidc.DefaultScope...),
